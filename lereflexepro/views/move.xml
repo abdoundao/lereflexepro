@@ -1,0 +1,112 @@
+<odoo>
+    <record id="view_form_rapport_intervention_image" model="ir.ui.view">
+        <field name="name">rapport.intervention.image.form</field>
+        <field name="model">rapport.intervention.image</field>
+        <field name="arch" type="xml">
+            <form string="Image d'Intervention">
+                <sheet>
+                    <group>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_invoice_form_inherited" model="ir.ui.view">
+        <field name="name">account.move.form.inherited</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Rapport d'Intervention">
+                    <group>
+                        <field name="intervention_date"/>
+                        <field name="intervention_address"/>
+                        <field name="type_intervention"/>
+                        <field name="treatment"/>
+                        <field name="technician_observations"/>
+                        <field name="recommendations"/>
+                        <field name="arrival_time"/>
+                        <field name="departure_time"/>
+                        <field name="rapport_images_ids">
+                            <kanban>
+                                <field name="image"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div class="oe_kanban_global_click">
+                                            <div class="oe_kanban_image">
+                                                <img t-att-src="kanban_image('rapport.intervention.image', 'image', record.id)"/>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </group>
+
+                </page>
+
+            </notebook>
+        </field>
+    </record>
+
+    <record id="invoice_intervention_report" model="ir.actions.report">
+        <field name="name">Rapport d'intervention</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">lereflexepro.report_invoice_with_intervention</field>
+        <field name="report_file">lereflexepro.report_invoice_with_intervention</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+    </record>
+
+    <record id="action_report_invoice_intervention" model="ir.actions.report">
+        <field name="name">Rapport d'Intervention</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">lereflexepro.report_invoice_with_intervention</field>
+        <field name="report_file">lereflexepro.report_invoice_with_intervention</field>
+    </record>
+
+<!--    <record id="view_invoice_form_inherited" model="ir.ui.view">-->
+<!--        <field name="model">account.move</field>-->
+<!--        <field name="inherit_id" ref="account.view_move_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//button[@name='action_invoice_sent']" position="after">-->
+<!--                <button type="object" name="YOUR_FUNCTION_NAME" string="Imprimer Rapport d'Intervention"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="action_report_invoice_intervention" model="ir.actions.client">-->
+<!--        <field name="name">Imprimer Rapport d'Intervention</field>-->
+<!--        <field name="tag">action_report_invoice_intervention</field>-->
+<!--        <field name="target">new</field>-->
+<!--        <field name="binding_model_id" ref="account.model_account_move"/>-->
+<!--    </record>-->
+
+    <!--    <template id="assets_backend" name="intervention_report_assets" inherit_id="web.assets_backend">-->
+    <!--&lt;!&ndash;        <xpath expr="." position="inside">&ndash;&gt;-->
+    <!--&lt;!&ndash;            <script type="text/javascript" src="/lereflexepro/static/src/js/action_manager_report.js"></script>&ndash;&gt;-->
+    <!--&lt;!&ndash;        </xpath>&ndash;&gt;-->
+    <!--    </template>-->
+
+<!--<record id="action_report_invoice_intervention" model="ir.actions.report">-->
+<!--    <field name="name">Rapport d'Intervention</field>-->
+<!--    <field name="model">account.move</field>-->
+<!--    <field name="report_type">qweb-pdf</field>-->
+<!--    <field name="report_name">lereflexepro.report_invoice_with_intervention</field>-->
+<!--    <field name="report_file">lereflexepro.report_invoice_with_intervention</field>-->
+<!--</record>-->
+<!--<record id="view_invoice_form_inherited" model="ir.ui.view">-->
+<!--    <field name="model">account.move</field>-->
+<!--    <field name="inherit_id" ref="account.view_move_form"/>-->
+<!--    <field name="arch" type="xml">-->
+<!--        <xpath expr="//button[@name='action_invoice_sent']" position="after">-->
+<!--            <button type="object" name="rapport_intervention" string="Imprimer Rapport d'Intervention"/>-->
+<!--        </xpath>-->
+<!--    </field>-->
+<!--</record>-->
+
+</odoo>
