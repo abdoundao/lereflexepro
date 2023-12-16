@@ -15,7 +15,7 @@
                                     <span t-field="doc.partner_id.name"/>
                                 </p>
                                 <p>
-                                    <strong>Date d'intervention :</strong>
+                                    <strong>Date d'intervention:</strong>
                                     <span t-field="doc.intervention_date"/>
                                 </p>
                                 <p>
