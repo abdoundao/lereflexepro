@@ -23,11 +23,17 @@
                 <page string="Rapport d'Intervention">
                     <group>
                         <field name="intervention_date"/>
+                        <field name="intervention_date_char"/>
                         <field name="intervention_address"/>
                         <field name="type_intervention"/>
+                        <field name="confirm_nuisible"/>
                         <field name="treatment"/>
+                        <field name="process_treatment"/>
                         <field name="technician_observations"/>
+                        <field name="available_personnel"/>
                         <field name="recommendations"/>
+                        <field name="next_action"/>
+                        <field name="other_info"/>
                         <field name="arrival_time"/>
                         <field name="departure_time"/>
                         <field name="rapport_images_ids">

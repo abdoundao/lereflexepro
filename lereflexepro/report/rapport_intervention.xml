@@ -16,7 +16,7 @@
                                 </p>
                                 <p>
                                     <strong>Date d'intervention:</strong>
-                                    <span t-field="doc.intervention_date"/>
+                                    <span t-field="doc.intervention_date_char"/>
                                 </p>
                                 <p>
                                     <strong>Adresse :</strong>
@@ -27,16 +27,36 @@
                                     <span t-field="doc.type_intervention"/>
                                 </p>
                                 <p>
+                                    <strong>Confirmation des nuisibles :</strong>
+                                    <span t-field="doc.confirm_nuisible"/>
+                                </p>
+                                <p>
                                     <strong>Traitement appliqué :</strong>
                                     <span t-field="doc.treatment"/>
+                                </p>
+                                <p>
+                                    <strong>Processus du traitement :</strong>
+                                    <span t-field="doc.process_treatment"/>
                                 </p>
                                 <p>
                                     <strong>Observations du technicien :</strong>
                                     <span t-field="doc.technician_observations"/>
                                 </p>
                                 <p>
+                                    <strong>Personnel présent :</strong>
+                                    <span t-field="doc.available_personnel"/>
+                                </p>
+                                <p>
                                     <strong>Recommandation du technicien :</strong>
                                     <span t-field="doc.recommendations"/>
+                                </p>
+                                <p>
+                                    <strong>Actions supplémentaires des techniciens :</strong>
+                                    <span t-field="doc.next_action"/>
+                                </p>
+                                <p>
+                                    <strong>Informations supplémentaires :</strong>
+                                    <span t-field="doc.other_info"/>
                                 </p>
                                 <p>
                                     <strong>Heure d'arrivée :</strong>
