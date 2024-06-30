@@ -27,11 +27,11 @@
                                     <span t-field="doc.type_intervention"/>
                                 </p>
                                 <p>
-                                    <strong>Confirmation des nuisibles :</strong>
+                                    <strong>Confirmation :</strong>
                                     <span t-field="doc.confirm_nuisible"/>
                                 </p>
                                 <p>
-                                    <strong>Traitement appliqué :</strong>
+                                    <strong>Solution appliquée :</strong>
                                     <span t-field="doc.treatment"/>
                                 </p>
                                 <p>
